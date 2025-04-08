@@ -2,4 +2,4 @@
 
 ### Practical examples and experiments with Git&GitHub.
 
-Zmieniamy plik na gałęzi `main`.
+Zmieniamy plik na gałęzi `main` i `konflikt`.
