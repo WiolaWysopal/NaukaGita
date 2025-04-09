@@ -21,3 +21,14 @@ Zmieniamy plik na gałęzi `main` i `konflikt`.
 - `revert` – zachowuje historię, dodaje `commit` cofający zmiany.
 
 - `reset` – cofa `HEAD` (i ewentualnie pliki), może usuwać historię, zwłaszcza z `--hard`.
+
+### `.gitignore`
+
+Plik `.gitignore` to specjalny plik w repozytorium Git, który zawiera listę plików i katalogów, które Git ma ignorować – tzn. nie śledzić ich zmian i nie dodawać ich do commitów, nawet jeśli istnieją w katalogu projektu.
+
+```
+*.log       # ignoruj wszystkie pliki .log
+temp/       # ignoruj cały katalog temp
+.env        # ignoruj plik .env
+```
+
