@@ -1,0 +1,3 @@
+[submodule "vendor/Automated-Arbitrage-Oppurtinity-Detector"]
+	path = vendor/Automated-Arbitrage-Oppurtinity-Detector
+	url = https://github.com/Tomasz-Zdeb/Automated-Arbitrage-Oppurtinity-Detector.git
