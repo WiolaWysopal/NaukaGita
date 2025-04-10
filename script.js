@@ -11,4 +11,4 @@ function removeElement() {
 
     var last = listItems[listItems.length - 1];
     last.parentNode.removeChild(last);
-}
+}}
