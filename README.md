@@ -99,3 +99,10 @@ echo "Wszystkie pliki przeszły pomyślnie!"
 # 6. Końcowy status (0 = OK, 1 = błąd)
 exit 0
 ```
+
+### `git reflog`
+
+`git reflog` to narzędzie w Git, które śledzi historię referencji (np. gałęzi, `commitów`, `HEAD`) w repozytorium. Działa to jak dziennik, który zapisuje wszystkie zmiany w wskazówkach na gałęziach (referencjach) - także te, które nie są zapisane w zwykłej historii commitów (np. zmiany w `HEAD`, zmiany gałęzi, resetowanie itp.).
+
+Każda akcja zmieniająca `HEAD` (np. przełączenie na inną gałąź, `commit`, `reset`) jest zapisywana w reflogu z unikalnym identyfikatorem, zatem możliwym jest, aby wykorzystać `git reflog` do wyświetlenia historii tych zmian.
+
