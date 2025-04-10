@@ -32,3 +32,9 @@ temp/       # ignoruj cały katalog temp
 .env        # ignoruj plik .env
 ```
 
+### `Cherry-pick`
+
+`git cherry-pick` to polecenie, które pozwala skopiować pojedynczy `commit` (lub kilka `commitów`) z jednej gałęzi do innej – bez łączenia całych historii gałęzi. Głównie przydaje się, gdy chcemy przenieść konkretną zmianę bez wykonywania pełnego `merge`’a czy `rebase`’a. Składnia polecenia:
+```
+git cherry-pick <hash_commita>
+```
