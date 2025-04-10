@@ -120,3 +120,53 @@ WAS CREATED
 TO DEMONSTRATE 
 HOW GIT REDFLOG WORKS
 ```
+
+### `git submodule`
+
+#### 1. Przejdź do katalogu swojego projektu
+Otwórz terminal i przejdź do katalogu, w którym znajduje się Twoje główne repozytorium.
+
+`cd /ścieżka/do/twojego/repozytorium`
+
+#### 2. Dodaj submoduł do katalogu `vendor/`
+Użyj poniższej komendy, aby dodać repozytorium jako submoduł w katalogu `vendor/`:
+
+`git submodule add https://github.com/Tomasz-Zdeb/Automated-Arbitrage-Oppurtinity-Detector.git vendor/Automated-Arbitrage-Oppurtinity-Detector`
+
+W wyniku tej komendy zostanie sklonowane repozytorium do katalogu `vendor/Automated-Arbitrage-Oppurtinity-Detector` w Twoim projekcie.
+
+#### 3. Zainicjuj submoduł
+Aby zainicjować submoduł, uruchom:
+
+`git submodule init`
+
+#### 4. Zaktualizuj submoduł do najnowszej wersji
+Zaktualizuj submoduł do najnowszej wersji, aby upewnić się, że masz najnowsze zmiany:
+
+`git submodule update --remote`
+
+#### 5. Dodaj zmiany do repozytorium
+Po dodaniu submodułu i jego aktualizacji, dodaj zmiany do swojego repozytorium głównego:
+
+`git add .`
+
+#### 6. Zatwierdź zmiany
+Następnie zatwierdź zmiany w głównym repozytorium:
+
+`git commit -m "Add submodule Automated-Arbitrage-Oppurtinity-Detector"`
+
+#### 7. Wypchnij zmiany do zdalnego repozytorium
+Wypchnij zmiany do zdalnego repozytorium:
+
+`git push`
+
+#### 8. Sprawdź status submodułów
+Aby sprawdzić status submodułów, użyj:
+
+`git submodule status`
+
+#### 9. Sprawdź status repozytorium
+Możesz również sprawdzić status swojego repozytorium:
+
+`git status`
+
