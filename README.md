@@ -106,3 +106,10 @@ exit 0
 
 Każda akcja zmieniająca `HEAD` (np. przełączenie na inną gałąź, `commit`, `reset`) jest zapisywana w reflogu z unikalnym identyfikatorem, zatem możliwym jest, aby wykorzystać `git reflog` do wyświetlenia historii tych zmian.
 
+#### Zastosowanie:
+
+- Odzyskiwanie utraconych `commitów`.
+- Reflog zapisuje historię zmian `HEAD` (np. przełączania gałęzi, `commitów`, `resetów`).
+- Umożliwia powrót do wcześniejszych `commitów` lub stanów repozytorium, które nie znajdują się w normalnej historii `commitów`.
+- Odzyskiwanie usuniętych gałęzi.
+- Pomaga w analizie działań na repozytorium (np. `rebase`, `merge`), które mogły wpłynąć na historię projektu.
