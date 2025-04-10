@@ -113,3 +113,10 @@ Każda akcja zmieniająca `HEAD` (np. przełączenie na inną gałąź, `commit`
 - Umożliwia powrót do wcześniejszych `commitów` lub stanów repozytorium, które nie znajdują się w normalnej historii `commitów`.
 - Odzyskiwanie usuniętych gałęzi.
 - Pomaga w analizie działań na repozytorium (np. `rebase`, `merge`), które mogły wpłynąć na historię projektu.
+
+```
+THIS SECTION 
+WAS CREATED 
+TO DEMONSTRATE 
+HOW GIT REDFLOG WORKS
+```
