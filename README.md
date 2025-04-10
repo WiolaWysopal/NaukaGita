@@ -38,3 +38,64 @@ temp/       # ignoruj cały katalog temp
 ```
 git cherry-pick <hash_commita>
 ```
+
+### Git `hooks`
+
+`Hook` Gita to specjalny skrypt, który jest automatycznie uruchamiany w odpowiedzi na konkretne zdarzenie – na przykład przed `commitem`, po `mergu`, po pobraniu zmian itd.
+
+Lokalizacja: 
+
+```
+.project-directory/
+├── .git/
+│   └── hooks/
+│       ├── pre-commit
+│       ├── commit-msg
+│       ├── post-merge
+│       └── ... (inne)
+```
+#### Typy
+
+| Hook           | Kiedy się odpala?                          |
+|----------------|--------------------------------------------|
+| `pre-commit`   | Przed wykonaniem `git commit`              |
+| `commit-msg `  | W momencie zapisu wiadomości commita       |
+| `post-merge`   | Po zakończonym mergu                       |
+| `pre-push `    | Przed `git push`                           |
+
+#### Składnia:
+
+```bash
+#!/bin/bash
+
+# 1. Komentarz informujący o funkcji hooka
+echo "Opis działania hooka..."
+
+# 2. Definicja zmiennych (opcjonalne)
+# Możesz tu zdefiniować zmienne do przechowywania danych potrzebnych w skrypcie
+variable="wartość"
+
+# 3. Warunki lub sprawdzanie plików (np. zmiany w repozytorium)
+# Znajdowanie plików zmienionych w danym commicie (przykład dla pre-commit)
+changed_files=$(git diff --cached --name-only --diff-filter=ACM)
+
+# 4. Pętla lub logika sprawdzająca warunki
+# Można tu np. sprawdzać składnię plików, zależności, czy inne wymagania
+for file in $changed_files; do
+    # Przykładowe sprawdzenie (np. dla plików JavaScript):
+    if [[ "$file" == *.js ]]; then
+        # Sprawdzenie składni (można użyć narzędzia zewnętrznego)
+        command_to_check "$file"
+        if [ $? -ne 0 ]; then
+            echo "Błąd w pliku $file. Commit zablokowany."
+            exit 1  # Zablokowanie commita w przypadku błędu
+        fi
+    fi
+done
+
+# 5. Potwierdzenie pomyślnego zakończenia operacji
+echo "Wszystkie pliki przeszły pomyślnie!"
+
+# 6. Końcowy status (0 = OK, 1 = błąd)
+exit 0
+```
