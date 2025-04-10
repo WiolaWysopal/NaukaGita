@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Sprawdzanie wszystkich plików .js
+echo "Checking syntax of JavaScript files..."
+
+# znajdź wszystkie pliki .js śledzone przez Gita
+js_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.js$')
+
+has_errors=0
+
+for file in $js_files; do
+    # Sprawdź składnię każdego pliku (node musi być zainstalowany)
+    node -c "$file"
+    if [ $? -ne 0 ]; then
+        has_errors=1
+    fi
+done
+
+if [ $has_errors -eq 1 ]; then
+    echo "ERROR: Commit blocked: syntax errors detected in JavaScript files."
+    exit 1
+fi
+
+echo "SUCCEEDED: Syntax OK – the commit can be executed."
+exit 0
