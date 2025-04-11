@@ -241,3 +241,26 @@ Sprawdzanie tagów na GitHubie:
 - Zdalnie:
     `git push origin --delete feature`
 
+### Publikowanie projektu na GitHub:
+
+1. Utwórz nowe repozytorium na GitHubie
+    1. Wejdź na https://github.com
+    2. Kliknij `New repository`
+    3. Podaj nazwę i ewentualny opis
+    4. Zdecyduj, czy repo ma być publiczne czy prywatne
+    5. (Opcjonalnie) dodaj plik `README`
+
+2. Połącz lokalny projekt z repozytorium
+Udaj się do katalogu projektu, otwórz `Git Bash` i wpisz następujące polecenia:
+
+```bash
+git init                           # jeśli to nowe repo
+git add .                          # dodaj wszystkie pliki
+git commit -m "Initial commit"     # pierwszy commit
+git remote add origin <link_do_repo>
+```
+3. Wypchnij projekt na GitHub:
+
+```bash
+git push -u origin main
+```
