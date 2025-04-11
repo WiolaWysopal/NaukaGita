@@ -170,3 +170,51 @@ Możesz również sprawdzić status swojego repozytorium:
 
 `git status`
 
+### `git tag`
+
+Tag w Git służy do oznaczania ważnych punktów w historii repozytorium, np. wersji oprogramowania (v1.0, v2.1 itp.). Najczęściej używany przy wersjonowaniu.
+
+- Rodzaje tagów:
+  - Lekki tag (`lightweight`): jak "alias" dla konkretnego commita.
+    * Przykład: `git tag v1.0`
+  - Adnotowany tag (`annotated`): zawiera metadane (autor, data, komentarz).
+    * Przykład: `git tag -a v1.0 -m "Pierwsze wydanie"`
+
+-  Tworzenie tagu:
+    - Lekki tag:
+      `git tag v1.0`
+    - Adnotowany tag:
+      `git tag -a v1.0 -m "Opis wersji"`
+
+- Tworzenie tagu dla konkretnego commita:
+      `git tag v1.0 <commit_hash>`
+
+-  Wyświetlanie tagów:
+      `git tag`
+
+- Szczegóły konkretnego tagu:
+      `git show v1.0`
+
+-  Wysyłanie tagu do zdalnego repozytorium:
+      `git push origin v1.0`
+
+- Wysyłanie wszystkich tagów:
+      `git push origin --tags`
+
+-  Usuwanie tagu:
+    - Lokalnie:
+      `git tag -d v1.0`
+    - Zdalnie:
+      `git push origin --delete v1.0`
+
+```
+Sprawdzanie tagów na GitHubie:
+    1.  Wejdź na stronę repozytorium
+    2. Kliknij „Tags” obok „Branches”
+    3. Zobaczysz listę dostępnych tagów
+```
+
+- Zastosowanie:
+    - Wersjonowanie wydań (`release`)
+    - Oznaczanie stabilnych `commitów`
+    - publikacja na `GitHub Releases`
