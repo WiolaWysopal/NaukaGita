@@ -218,3 +218,19 @@ Sprawdzanie tagów na GitHubie:
     - Wersjonowanie wydań (`release`)
     - Oznaczanie stabilnych `commitów`
     - publikacja na `GitHub Releases`
+
+### `git checkout`
+
+`git checkout <SHA_commita>` pozwala przejść do dowolnego punktu w historii projektu Umożliwia analizę wcześniejszych wersji kodu bez zmieniania gałęzi, jednak przejście do wcześniejszego commita powoduje stan `detached HEAD`:
+
+1. Sprawdź historię commitów:
+   `git log --oneline`
+
+2. Przejdź do wybranego commita:
+   `git checkout <SHA_commita>`
+
+3. Przeanalizuj kod.
+
+4. Wróć do bieżącej gałęzi:
+   `git checkout main`
+
