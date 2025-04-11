@@ -234,3 +234,10 @@ Sprawdzanie tagów na GitHubie:
 4. Wróć do bieżącej gałęzi:
    `git checkout main`
 
+### Usuwanie gałęzi:
+
+- Lokalnie:
+    `git branch -d feature`
+- Zdalnie:
+    `git push origin --delete feature`
+
